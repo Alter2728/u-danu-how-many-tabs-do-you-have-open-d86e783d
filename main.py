@@ -15,12 +15,13 @@ from pathlib import Path
 # make it specific and odd so it reads as a real, lived-in tally —
 # a heavy tab hoarder's actual count, surprising without being absurd.
 LINE = "347"
+ENTRY_FILENAME = "entry.txt"
 
 
 def main() -> None:
     out_dir = Path(os.environ.get("MAKEFUN_OUTPUT_DIR", "/output"))
     out_dir.mkdir(parents=True, exist_ok=True)
-    (out_dir / "entry.txt").write_text(LINE, encoding="utf-8")
+    (out_dir / ENTRY_FILENAME).write_text(LINE, encoding="utf-8")
 
 
 if __name__ == "__main__":
